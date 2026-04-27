@@ -1095,3 +1095,108 @@ footer {
 .page-header {
   padding: 140px 5% 70px;
 }
+
+/* ============ MENÃš HAMBURGUESA ============ */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+.nav-menu {
+    transition: all 0.3s ease;
+}
+
+/* ============ RESPONSIVE MENÃš ============ */
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 31, 71, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        list-style: none;
+    }
+
+    nav ul.active {
+        max-height: 400px;
+    }
+
+    nav ul li {
+        padding: 12px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav ul a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    nav ul a:hover {
+        color: var(--primary-yellow);
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    nav {
+        padding: 1rem 3%;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 0.8rem 2%;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .hamburger span {
+        width: 22px;
+        height: 2.5px;
+    }
+}
