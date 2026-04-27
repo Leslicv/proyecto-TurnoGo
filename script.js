@@ -203,4 +203,36 @@ navLinks.forEach(link => {
     }
 });
 });
+function toggleMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+}
+
+// Cerrar menÃº al hacer clic en un link
+document.querySelectorAll('#navMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
+
+// Cerrar menÃº al hacer clic fuera
+document.addEventListener('click', (e) => {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const nav = document.querySelector('nav');
+    
+    if (!nav.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
+});
+
+console.log('âœ… MenÃº hamburguesa cargado');
 
