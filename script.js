@@ -9,7 +9,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Intersection Observer para animaciones fade-in
+
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -24,19 +24,16 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Aplicar observador a elementos que tienen clases específicas
 document.querySelectorAll('.feature-card, .objective-card, .problem-item, .solution-item, .link-card').forEach(el => {
     observer.observe(el);
 });
 
-// Cerrar menu si estaba abierto al hacer clic en un link
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', () => {
-        // Aquí puedes agregar lógica adicional si necesitas
+       
     });
 });
 
-// Hacer el logo clickeable
 document.addEventListener('DOMContentLoaded', function() {
     const logos = document.querySelectorAll('.logo');
     logos.forEach(logo => {
@@ -47,21 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Detectar si estamos en producción y cambiar URLs si es necesario
 function getAppStoreURL() {
-    // Reemplaza con tu URL real de App Store cuando esté lista
+    
     return 'https://apps.apple.com/app/turngo-tu-turno-donde-estes/id1234567890';
 }
 
-// Analítica básica (comentada, descomentar si usas Google Analytics u otro servicio)
-/*
-window.addEventListener('load', function() {
-    console.log('Página cargada:', window.location.pathname);
-    // Aquí puedes enviar eventos de Analytics
-});
-*/
 
-// Validación básica del formulario
 function validateForm() {
     const inputs = document.querySelectorAll('input[required], textarea[required]');
     let isValid = true;
@@ -106,7 +94,6 @@ function animateCounter(element, target, duration = 1000) {
     }, 16);
 }
 
-// Detectar secciones visibles para resaltar nav
 const sections = document.querySelectorAll('section');
 window.addEventListener('scroll', () => {
     let current = '';
@@ -120,37 +107,22 @@ window.addEventListener('scroll', () => {
         }
     });
     
-    // Aquí puedes agregar lógica para resaltar el nav item activo
 });
 
-// Dark mode toggle (opcional)
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
     localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
 }
 
-// Cargar preferencia de dark mode
 if (localStorage.getItem('darkMode') === 'true') {
     document.body.classList.add('dark-mode');
 }
 
-// Detectar si el dispositivo prefiere dark mode
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    // El usuario prefiere dark mode
+   
 }
 
-// Service Worker (si quieres crear una PWA)
-/*
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').then(reg => {
-        console.log('Service Worker registrado:', reg);
-    }).catch(err => {
-        console.log('Error registrando Service Worker:', err);
-    });
-}
-*/
 
-// Función para copiar al portapapeles
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
         console.log('Copiado:', text);
@@ -181,7 +153,6 @@ function mostrarSolucion() {
 }
 
 
-const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".about-nav-fixed a");
 
 window.addEventListener("scroll", () => {
@@ -205,33 +176,23 @@ navLinks.forEach(link => {
 });
 
 
-function toggleMenu() {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
-    
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-}
 
-document.querySelectorAll('#navMenu a').forEach(link => {
-    link.addEventListener('click', () => {
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
-        
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
-});
+function toggleMenu() {
+  const navmenu = document.getElementById("navMenu");
+  const hamburger = document.getElementById("hamburger");
+
+  navmenu.classList.toggle("active");
+  hamburger.classList.toggle("active");
+}
 
 document.addEventListener('click', (e) => {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
     const nav = document.querySelector('nav');
     
-    if (!nav.contains(e.target)) {  // ✅ SIN CORCHETES
+    if (!nav.contains(e.target)) {  
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
     }
 });
 
-console.log('✅ Menú hamburguesa cargado');
