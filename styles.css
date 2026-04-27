@@ -140,7 +140,7 @@ nav a:hover {
     z-index: 0;
 }
 
-
+/* IMÁGENES */
 .hero-phones {
     flex: 1;
     position: relative;
@@ -155,7 +155,7 @@ nav a:hover {
     transition: 0.3s;
 }
 
-
+/* POSICIONES */
 .phone-1 {
     left: 0;
     top: 40px;
@@ -175,7 +175,7 @@ nav a:hover {
 
 }
 
-
+/* HOVER */
 .hero-phones:hover .phone-1 {
     transform: rotate(-5deg) translateY(-10px);
 }
@@ -251,7 +251,7 @@ nav a:hover {
     }
 }
 
-
+/* ============ SECTIONS ============ */
 .problem-solution {
     padding: 20px 5%;
     background: white;
@@ -315,6 +315,7 @@ nav a:hover {
     50% { transform: translateY(-10px); }
 }
 
+/* ============ OBJECTIVES ============ */
 .objectives {
     padding: 100px 5%;
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
@@ -365,7 +366,7 @@ nav a:hover {
     margin-bottom: 0.5rem;
 }
 
-
+/* ============ FEATURES ============ */
 .features {
     padding: 100px 5%;
     background: var(--light-gray);
@@ -443,6 +444,7 @@ nav a:hover {
     font-size: 1.3rem;
 }
 
+/* ============ QUICK LINKS ============ */
 .quick-links {
     padding: 100px 5%;
     background: white;
@@ -489,7 +491,7 @@ nav a:hover {
     color: var(--text-light);
 }
 
-
+/* ============ FOOTER ============ */
 footer {
     background: var(--primary-dark);
     color: white;
@@ -1094,8 +1096,6 @@ footer {
   padding: 140px 5% 70px;
 }
 
-/* ============ MENÃš HAMBURGUESA ============ */
-
 .hamburger {
     display: none;
     flex-direction: column;
@@ -1103,7 +1103,7 @@ footer {
     gap: 5px;
     z-index: 1001;
 }
-
+ 
 .hamburger span {
     width: 25px;
     height: 3px;
@@ -1111,28 +1111,30 @@ footer {
     border-radius: 3px;
     transition: all 0.3s ease;
 }
-
+ 
 .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(8px, 8px);
 }
-
+ 
 .hamburger.active span:nth-child(2) {
     opacity: 0;
 }
-
+ 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(8px, -8px);
 }
-
+ 
 .nav-menu {
     transition: all 0.3s ease;
 }
-
+ 
+/* ============ RESPONSIVE MENÚ ============ */
+ 
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
     }
-
+ 
     nav ul {
         position: fixed;
         top: 60px;
@@ -1148,49 +1150,49 @@ footer {
         transition: max-height 0.3s ease;
         list-style: none;
     }
-
+ 
     nav ul.active {
         max-height: 400px;
     }
-
+ 
     nav ul li {
         padding: 12px 20px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-
+ 
     nav ul a {
         display: block;
         color: white;
         text-decoration: none;
         font-weight: 500;
     }
-
+ 
     nav ul a:hover {
         color: var(--primary-yellow);
     }
-
+ 
     .nav-button {
         display: none;
     }
-
+ 
     nav {
         padding: 1rem 3%;
     }
-
+ 
     .logo {
         font-size: 1.5rem;
     }
 }
-
+ 
 @media (max-width: 480px) {
     nav {
         padding: 0.8rem 2%;
     }
-
+ 
     .logo {
         font-size: 1.3rem;
     }
-
+ 
     .hamburger span {
         width: 22px;
         height: 2.5px;
