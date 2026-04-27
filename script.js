@@ -168,7 +168,7 @@ window.addEventListener('unhandledrejection', function(event) {
     console.error('Promise rechazada no manejada:', event.reason);
 });
 
-// Log de PageView (útil para debugging)
+
 console.log('TurnGo - Página cargada:', {
     url: window.location.href,
     timestamp: new Date().toISOString(),
@@ -203,6 +203,8 @@ navLinks.forEach(link => {
     }
 });
 });
+
+
 function toggleMenu() {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
@@ -211,7 +213,6 @@ function toggleMenu() {
     navMenu.classList.toggle('active');
 }
 
-// Cerrar menÃº al hacer clic en un link
 document.querySelectorAll('#navMenu a').forEach(link => {
     link.addEventListener('click', () => {
         const hamburger = document.getElementById('hamburger');
@@ -222,17 +223,15 @@ document.querySelectorAll('#navMenu a').forEach(link => {
     });
 });
 
-// Cerrar menÃº al hacer clic fuera
 document.addEventListener('click', (e) => {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
     const nav = document.querySelector('nav');
     
-    if (!nav.contains(e.target)) {
+    if (!nav.contains(e.target)) {  // ✅ SIN CORCHETES
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
     }
 });
 
-console.log('âœ… MenÃº hamburguesa cargado');
-
+console.log('✅ Menú hamburguesa cargado');
